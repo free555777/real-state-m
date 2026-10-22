@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4500b4;
+  --color-primary-container: #5e23dc;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #cfbfff;
+  --color-primary-fixed: #e8ddff;
+  --color-primary-fixed-dim: #cebdff;
+  --color-on-primary-fixed: #20005e;
+  --color-on-primary-fixed-variant: #5100cf;
+
+  --color-secondary: #006b5d;
+  --color-secondary-container: #66f6dd;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #006f61;
+  --color-secondary-fixed: #69f9e0;
+  --color-secondary-fixed-dim: #46dcc4;
+  --color-on-secondary-fixed: #00201b;
+  --color-on-secondary-fixed-variant: #005046;
+
+  --color-tertiary: #7e0023;
+  --color-tertiary-container: #aa0032;
+  --color-tertiary-fixed: #ffdadb;
+  --color-tertiary-fixed-dim: #ffb2b7;
+  --color-on-tertiary-fixed: #40000d;
+  --color-on-tertiary-fixed-variant: #92002a;
+
+  --color-emerald-verified: #10b981;
+  --color-warning-amber: #f59e0b;
+  --color-violet-tint: #f3f0fc;
+
+  --color-surface: #fcf9f8;
+  --color-surface-card: #ffffff;
+  --color-surface-canvas: #f8f9fd;
+  --color-surface-subtle: #f2f3f8;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container: #f0eded;
+  --color-surface-container-high: #eae7e7;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-highest: #e5e2e1;
+
+  --color-border-subtle: #e5e7eb;
+  --color-on-surface: #1c1b1b;
+  --color-on-surface-variant: #494455;
+  --color-text-muted: #6b7280;
+  --color-outline: #7a7487;
+  --color-outline-variant: #cbc3d8;
+  --color-inverse-surface: #313030;
+  --color-inverse-on-surface: #f3f0ef;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Custom PropTech styles & tactile sliders */
+input[type="range"] {
+  accent-color: #5e23dc;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f2f3f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbc3d8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5e23dc;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* User specified hero background */
+.hero {
+  background-image: url('/images/luxury-house.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 4rem);
+  width: 100%;
+}
+
+/* Realistic Leaflet Map & Custom Thumbnail Price Markers */
+.leaflet-container {
+  font-family: inherit;
+  z-index: 10;
+  border-radius: 1rem;
+}
+.realistic-marker-wrapper {
+  background: transparent !important;
+  border: none !important;
+}
+.realistic-map-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 4px 10px 4px 5px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16), 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1.5px solid #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+.realistic-map-marker:hover,
+.realistic-map-marker.active {
+  background: #5e23dc;
+  border-color: #ffffff;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(94, 35, 220, 0.45);
+  transform: scale(1.12);
+  z-index: 999 !important;
+}
+.realistic-map-marker .marker-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+.realistic-map-marker .marker-price {
+  font-size: 11px;
+  font-weight: 800;
+  color: #1c1b1b;
+  letter-spacing: -0.01em;
+}
+.realistic-map-marker:hover .marker-price,
+.realistic-map-marker.active .marker-price {
+  color: #ffffff;
+}
+

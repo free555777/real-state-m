@@ -1,0 +1,8 @@
+{
+  "name": "Remix PropTech Horizon",
+  "description": "Next-generation Indian real estate discovery platform with verified listings, interactive map, floor plan viewer, and EMI calculator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
